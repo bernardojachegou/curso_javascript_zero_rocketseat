@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS - Promise</title>
+</head>
+
+<body>
+    <div></div>
+
+    <input type="text" name="user">
+    <button onclick="listRepositories()">Adicionar</button>
+
+    <ul></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        var listElement = document.querySelector('ul');
+        var inputElement = document.querySelector('input');
+
+
+        function listRepositories() { //função que busca os respositórios
+            var user = inputElement.value;
+
+            if (!user) return;
+
+            axios.get('https://api.github.com/users/' + user + '/repos')
+                .then(function (response) {
+                    renderRepositories(response.data);
+                })
+        }
+
+        function renderRepositories(repositories) { //função que lista os repositórios nas li's
+            for (repo of repositories) {
+                const textElement = document.createTextNode(repo.name);
+                const liElement = document.createElement('li');
+
+                liElement.appendChild(textElement);
+                listElement.appendChild(liElement);
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

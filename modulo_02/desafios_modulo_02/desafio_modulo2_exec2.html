@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <button id="new">Criar</button>
+
+    <div id="box"></div>
+
+
+    <script>
+        //Liga a variável ao elemento com id="criar"
+        var btnElement = document.getElementById("new");
+        //Liga a vairável ao elemento com id="box"
+        var boxesElement = document.getElementById("box");
+
+        btnElement.onclick = function () {
+            //Cria uma div e atribui a div a variável box
+            var box = document.createElement("div");
+            // Atribui o estilo a div dentro da variável box
+            box.style.width = "100px";
+            box.style.height = "100px";
+            box.style.margin = '10px';
+            box.style.backgroundColor = "#F00";
+
+            //faz com que a função getRandomColor seja executada ao passar o mouse no elemento div
+            box.onmouseover = function () {
+                box.style.backgroundColor = getRandomColor();
+            };
+            boxesElement.appendChild(box);
+        };
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+    </script>
+</body>
+
+</html>

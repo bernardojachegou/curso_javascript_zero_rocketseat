@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <ul id="list"></ul> <!-- Cria a ul que vai receber os li's -->
+
+    <input type="text" name="nome">
+    <button onClick="adiciona()">Adicionar</button>
+    
+    <script>
+        // atribui o button a variavel btnElement
+        var btnElement = document.querySelector('button');
+        // atribui o input a variável inputElement
+        var inputElement = document.querySelector('input');
+        // atribui a ul a variavel elementList
+        var elementList = document.querySelector('ul');
+
+        // array que irá doar os nomes para as li's
+        var nomes = [
+            "Diego",
+            "Gabriel",
+            "Lucas"];
+
+        // função que joga cria as li's com os indices do array
+        function renderName() {
+            elementList.innerHTML = ''; //Reseta o array para não adicionar os mesmo elesmentos novamente-
+
+            for (nome of nomes) { //Para cada posição contida no array
+                var elementChild = document.createElement("li"); //Crie uma li e atribui a variável elementChild
+                var elementChildText = document.createTextNode(nome); //Joga o conteúdo da posicão x do array na variável elementChildText
+
+                elementChild.appendChild(elementChildText); //atribui o texto a li
+                elementList.appendChild(elementChild); //atribui a li a ul
+            }
+        }
+        
+        renderName(); //aciona a função
+
+        function addNew () { //Função que insere novo elemento no array
+            var elementChildText = inputElement.value; //captura as informações do input
+
+            //Adiciona informações do input ao array
+            nomes.push(elementChildText);
+            //Reseta o input
+            inputElement.value = '';
+            renderName();
+        }
+
+        btnElement.onclick = addNew;
+    </script>
+</body>
+
+</html>

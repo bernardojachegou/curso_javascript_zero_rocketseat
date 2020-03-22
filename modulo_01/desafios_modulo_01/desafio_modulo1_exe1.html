@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <script>
+            // objeto 
+            var endereco = {
+                rua: "Rua dos pinheiros",
+                numero: 1293,
+                bairro: "Centro",
+                cidade: "São Paulo",
+                uf: "SP"
+            };
+
+        // função que chama as informações do objeto
+        function mostra_info(endereco) {
+            return "O usuário mora em " +endereco.cidade+ "/" +endereco.uf+ ", no bairro "+endereco.bairro+", na rua "+endereco.rua+" com número "+endereco.numero+".";
+        }
+
+        //imprime as informções do objeto atravès da função
+        console.log(mostra_info(endereco));
+
+    </script>
+</body>
+
+</html>

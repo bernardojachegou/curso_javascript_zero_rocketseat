@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <div>
+        <!-- Botão que receba função criarBotao -->
+        <button id="criar" class="botao" onclick="criarBotao()">Criar</button>
+    </div>
+
+
+    <script>
+        // Função que cria a div com as especificações
+        function criarBotao() { 
+
+            //cria um elemento do tipo div e atribui esse elemento a variável boxElement
+            let boxElement = document.createElement("div"); 
+            // Atruibui o estilo a ao elemento dentro da variável boxElement //
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.margin = '10px';
+            boxElement.style.backgroundColor = '#f00';
+
+            //adiciona a classe .box na div criada
+            boxElement.classList.add('box');
+
+            //Coloca o elemento criado pela variável dentro do body
+            document.body.appendChild(boxElement);
+        }
+
+    </script>
+</body>
+
+</html>

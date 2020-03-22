@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <ul id="list"></ul> <!-- Cria a ul que vai receber os li's -->
+
+    <script>
+        // atribui a ul a variavel elementList
+        var elementList = document.querySelector("ul");
+
+        // array que irá doar os nomes para as li's
+        var nomes = [
+            "Diego",
+            "Gabriel",
+            "Lucas"];
+
+        // função que joga cria as li's com os indices do array
+        function renderName() {
+            for (nome of nomes) { //Para cada posição contida no array
+                var elementChild = document.createElement("li"); //Crie uma li e atribui a variável elementChild
+                var elementChildText = document.createTextNode(nome); //Joga o conteúdo da posicão x do array na variável elementChildText
+
+                elementChild.appendChild(elementChildText); //atribui o texto a li
+                elementList.appendChild(elementChild); //atribui a li a ul
+            }
+        }
+        
+        renderName(); //aciona a função
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="nome" />
+        <button class="botao">Adicionar</button>
+    </div>
+
+    <script>
+
+        var inputElement = document.querySelector('input[name=nome]'); //referenciando caixa de texto (input)
+        var btnElement = document.querySelector('button.botao'); //refrenciando botão do input
+
+        btnElement.onclick = function() { //quando o botão for clickado...
+            var text = inputElement.value; //o valor dentro da caixa de texto é guardado na var text
+            
+            alert(text); //o valor dentro da var texto é exposto através do alert
+        }
+
+    </script>
+</body>
+
+</html>

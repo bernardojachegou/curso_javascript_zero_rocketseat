@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Curso JS</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        //Cria um elemento utilizando a tag <a></a>
+        var linkElement = document.createElement('a'); 
+        //Atribui o link do site para dentro das tag <a></a>
+        linkElement.setAttribute('href', 'https://skylab.rocketseat.com.br/node/curso-java-script/group/manipulando-a-dom/lesson/lidando-com-elementos');
+        
+        // Cria um texto 
+        var textElement = document.createTextNode('Acessar site da Rocketseat');
+        // Atribui o texto para a variável linkElement
+        linkElement.appendChild(textElement);
+
+        // Busca uma tag específica, neste caso <div id="#app">
+        var containerElement = document.querySelector('#app');
+        // Encaixa a tag <a></a> dentro da <div id="#app">
+        containerElement.appendChild(linkElement);
+
+    </script>
+</body>
+
+</html>
